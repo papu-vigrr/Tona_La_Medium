@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Toña La Médium</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Contáctanos</h1>
+        <p>Estamos aquí para resolver tus dudas.</p>
+
+        <button type="button" id="menu-toggle"
+        aria-label="Abrir menú" aria-expanded="false"
+        aria-controls="menu-principal">☰</button>
+
+        <nav id="menu-principal">
+            <a href="index.html">Inicio</a>
+            <a href="productos.html">Productos</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+
+    <main class="contacto-main">
+        <section class="contacto-seccion">
+
+            <h2>¡Nos gustaría escucharte!</h2>
+            <p>Si tienes alguna duda sobre nuestros productos, escríbenos.</p>
+
+            <form id="formulario-contacto">
+
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="correo">Correo electrónico:</label>
+                <input type="email" id="correo" name="correo" required>
+
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono"
+                pattern="[0-9]{10}" maxlength="10"
+                placeholder="10 dígitos" required>
+
+                <label for="mensaje">Escribe tu mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+                <div class="contacto-botones">
+                    <button type="submit">Enviar mensaje</button>
+                    <button type="reset">Limpiar formulario</button>
+                </div>
+
+                <p id="mensaje-formulario" role="status"
+                aria-live="polite"></p>
+
+            </form>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Toña La Médium.</p>
+    </footer>
+
+    <script src="main.js" defer></script>
+
+</body>
+</html>

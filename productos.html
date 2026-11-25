@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Toña La Médium</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Encabezado de la página y menú de navegación -->
+    <header>
+        <div class="encabezado-superior">
+            <div>
+                <h1>Nuestros Productos</h1>
+                <p>Encuentra todo lo que necesitas en nuestro mundo esotérico.</p>
+            </div>
+
+            <!-- Botón del carrito de compras -->
+            <button type="button" class="carrito" id="cart-toggle"
+            aria-expanded="false" aria-controls="carrito-panel">
+                <span class="icono-carrito">🛒</span>
+                <span>Carrito</span>
+                <span class="contador" id="contador-carrito">0</span>
+            </button>
+        </div>
+
+        <!-- Botón del menú para celulares -->
+        <button type="button" id="menu-toggle"
+        aria-label="Abrir menú" aria-expanded="false"
+        aria-controls="menu-principal">☰</button>
+
+        <nav id="menu-principal">
+            <a href="index.html">Inicio</a>
+            <a href="productos.html">Productos</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- Ventanita del carrito -->
+    <section class="carrito-panel" id="carrito-panel" hidden>
+
+        <h2>Tu carrito</h2>
+
+        <ul id="lista-carrito"></ul>
+
+        <p class="total-compra">
+            Total: <span id="total-carrito">$0.00 MXN</span>
+        </p>
+
+        <button type="button" id="comprar-carrito">
+            Comprar
+        </button>
+
+        <button type="button" id="vaciar-carrito">
+            Vaciar carrito
+        </button>
+
+    </section>
+
+    <!-- Formulario para finalizar la compra -->
+    <section class="checkout-panel" id="checkout-panel" hidden>
+
+        <h2>Datos de envío</h2>
+        <p>Completa tus datos para finalizar tu compra.</p>
+
+        <div class="checkout-contenido">
+
+            <!-- Formulario de compra -->
+            <form id="formulario-compra">
+
+                <label for="nombre-recibe">Nombre de quien recibe:</label>
+                <input type="text" id="nombre-recibe" name="nombre" required>
+
+                <label for="correo-compra">Correo electrónico:</label>
+                <input type="email" id="correo-compra" name="correo" required>
+
+                <label for="telefono-compra">Número de teléfono:</label>
+                <input type="tel" id="telefono-compra" name="telefono"
+                pattern="[0-9]{10}" maxlength="10" placeholder="10 dígitos" required>
+
+                <label for="direccion-compra">Dirección:</label>
+                <input type="text" id="direccion-compra" name="direccion" required>
+
+                <label for="ciudad-compra">Ciudad:</label>
+                <input type="text" id="ciudad-compra" name="ciudad" required>
+
+                <label for="pais-compra">País:</label>
+                <input type="text" id="pais-compra" name="pais" required>
+
+                <div class="checkout-botones">
+                    <button type="submit">Finalizar compra</button>
+                    <button type="button" id="cancelar-compra">Cancelar</button>
+                </div>
+
+            </form>
+            <div class="checkout-imagen">
+                <!--  imagen -->
+                <img src="Imagenes/cantina.jfif" alt="Imagen de nuestra tienda esotérica">
+            </div>
+
+        </div>
+
+        <p id="mensaje-compra" role="status" aria-live="polite"></p>
+
+    </section>
+
+    <!-- Contenido principal: catálogo dividido por categorías -->
+    <main>
+
+        <!-- Categoría de cartas de tarot -->
+        <section class="catalogo">
+            <h2>Deck de Tarots</h2>
+
+            <article>
+                <figure><img src="https://d3ekkp2oigezer.cloudfront.net/business/361/blogs/360/images/tarot-rider-coleman-waite-original-1909.jpg" alt="Tarot clásico"></figure>
+                <h3>Tarot Clásico</h3>
+                <p>Mazo tradicional de 78 cartas.</p>
+                <p>Precio: $350 MXN</p>
+                <button type="button" class="btn-carrito">Agregar al carrito</button>
+            </article>
+
+            <article>
+                <figure><img src="https://tse4.mm.bing.net/th/id/OIP.sB_t3BYjB-TxXVE0m_RjVAHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Tarot de la luna"></figure>
+                <h3>Tarot de la Luna</h3>
+                <p>Cartas con ilustraciones lunares.</p>
+                <p>Precio: $420 MXN</p>
+                <button type="button" class="btn-carrito">Agregar al carrito</button>
+            </article>
+
+            <article>
+                <figure><img src="https://m.media-amazon.com/images/I/91GorXbeACL.jpg" alt="Tarot dorado"></figure>
+                <h3>Tarot Dorado</h3>
+                <p>Diseño elegante con detalles dorados.</p>
+                <p>Precio: $467 MXN</p>
+                <button type="button" class="btn-carrito">Agregar al carrito</button>
+            </article>
+
+            <article>
+                <figure><img src="https://m.media-amazon.com/images/I/81CAIm33tzL.jpg" alt="Tarot oscuro"></figure>
+                <h3>Tarot Oscuro</h3>
+                <p>Cartas con temática misteriosa.</p>
+                <p>Precio: $578 MXN</p>
+                <button type="button" class="btn-carrito">Agregar al carrito</button>
+            </article>
+        </section>
+
+        <!-- Categoría de cartas de oráculo -->
+        <section class="catalogo">
+            <h2>Cartas del Oráculo</h2>
+
+            <article>
+                <figure><img src="https://http2.mlstatic.com/D_NQ_NP_899988-MLC86899653087_062025-O.webp" alt="Oráculo de chakras"></figure>
+                <h3>Oráculo de Chakras</h3>
+                <p>Cartas con mensajes de reflexión.</p>
+                <p>Precio: $280 MXN</p>
+                <button type="button" class="btn-carrito">Agregar al carrito</button>
+            </article>
+
+            <article>
+                <figure><img src="https://m.media-amazon.com/images/I/81Bpd8o3L5L._AC_SY300_SX300_QL70_ML2_.jpg" alt="Oráculo de ángeles"></figure>
+                <h3>Oráculo de Ángeles</h3>
+                <p>Oráculo de Ángeles de 52 cartas.</p>
+                <p>Precio: $320 MXN</p>
+                <button type="button" class="btn-carrito">Agregar al carrito</button>
+            </article>
+
+            <article>
+                <figure><img src="https://m.media-amazon.com/images/I/41snaz5rNQL._SY385_.jpg" alt="Oráculo de animales"></figure>
+                <h3>Oráculo Del Espiritu Animal</h3>
+                <p>68 cartas ilustradas con animales.</p>
+                <p>Precio: $260 MXN</p>
+                <button type="button" class="btn-carrito">Agregar al carrito</button>
+            </article>
+
+            <article>
+                <figure><img src="https://m.media-amazon.com/images/I/81e9mBr1DsL._SY425_.jpg" alt="Oráculo mágico"></figure>
+                <h3>Oráculo Mágico</h3>
+                <p>Un mazo de mensajes intuitivos.</p>
+                <p>Precio: $300 MXN</p>
+                <button type="button" class="btn-carrito">Agregar al carrito</button>
+            </article>
+        </section>
+
+        <!-- Categoría de péndulos y tableros -->
+        <section class="catalogo">
+            <h2>Péndulos y Tableros</h2>
+
+            <article>
+                <figure><img src="https://m.media-amazon.com/images/I/61IYxhbRK2L._AC_SX679_.jpg" alt="Péndulo de cuarzo"></figure>
+                <h3>Péndulo de Cuarzo</h3>
+                <p>Péndulo de piedra natural.</p>
+                <p>Precio: $180 MXN</p>
+                <button type="button" class="btn-carrito">Agregar al carrito</button>
+            </article>
+
+            <article>
+                <figure><img src="https://m.media-amazon.com/images/I/61ci+XQ4Y8L._AC_SX679_.jpg" alt="Péndulo de amatista"></figure>
+                <h3>Péndulo de Amatista</h3>
+                <p>Péndulo de color violeta.</p>
+                <p>Precio: $220 MXN</p>
+                <button type="button" class="btn-carrito">Agregar al carrito</button>
+            </article>
+
+            <article>
+                <figure><img src="https://m.media-amazon.com/images/I/71SgfMptFrL._AC_SY300_SX300_QL70_ML2_.jpg" alt="Tablero de péndulo"></figure>
+                <h3>Tablero Místico</h3>
+                <p>Tablero con letras y símbolos.</p>
+                <p>Precio: $250 MXN</p>
+                <button type="button" class="btn-carrito">Agregar al carrito</button>
+            </article>
+
+            <article>
+                <figure><img src="https://m.media-amazon.com/images/I/51sv0Wpj2ZL._AC_SL1500_.jpg" alt="Péndulo dorado"></figure>
+                <h3>Péndulo Dorado</h3>
+                <p>Accesorio metálico para consultas.</p>
+                <p>Precio: $190 MXN</p>
+                <button type="button" class="btn-carrito">Agregar al carrito</button>
+            </article>
+        </section>
+
+        <!-- Categoría de tableros de ouija -->
+        <section class="catalogo">
+            <h2>Ouijas</h2>
+
+            <article>
+                <figure><img src="https://tse3.mm.bing.net/th/id/OIP.pgngBxgvC_kzVTmB-980XQHaFO?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Ouija clásica"></figure>
+                <h3>Ouija Clásica</h3>
+                <p>Tablero tradicional de madera.</p>
+                <p>Precio: $450 MXN</p>
+                <button type="button" class="btn-carrito">Agregar al carrito</button>
+            </article>
+
+            <article>
+                <figure><img src="https://http2.mlstatic.com/D_Q_NP_2X_836903-MLM80313925656_112024-E-juego-de-mesa-ouija-tabla-ouija-20x30-cm-5-mm-de-grosor.webp" alt="Ouija oscura"></figure>
+                <h3>Ouija Oscura</h3>
+                <p>Diseño negro con símbolos.</p>
+                <p>Precio: $520 MXN</p>
+                <button type="button" class="btn-carrito">Agregar al carrito</button>
+            </article>
+
+            <article>
+                <figure><img src="https://tse3.mm.bing.net/th/id/OIP.wLrZ8eOHbCppskWCjpXHhwHaD2?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Ouija vintage"></figure>
+                <h3>Ouija Vintage</h3>
+                <p>Tablero de estilo antiguo.</p>
+                <p>Precio: $480 MXN</p>
+                <button type="button" class="btn-carrito">Agregar al carrito</button>
+            </article>
+
+            <article>
+                <figure><img src="https://http2.mlstatic.com/D_NQ_NP_2X_776468-MLM111767116629_052026-F.webp" alt="Ouija mini"></figure>
+                <h3>Ouija Mini</h3>
+                <p>Versión compacta del tablero.</p>
+                <p>Precio: $300 MXN</p>
+                <button type="button" class="btn-carrito">Agregar al carrito</button>
+            </article>
+        </section>
+
+        <!-- Categoría de velas -->
+        <section class="catalogo">
+            <h2>Velas</h2>
+
+            <article>
+                <figure><img src="https://http2.mlstatic.com/D_NQ_NP_2X_673080-MLM114551467005_072026-F.webp" alt="Vela roja"></figure>
+                <h3>Vela Roja de Amarre Hombre</h3>
+                <p>Vela de uso para amarres y atracción sexual.</p>
+                <p>Precio: $430 MXN</p>
+                <button type="button" class="btn-carrito">Agregar al carrito</button>
+            </article>
+
+            <article>
+                <figure><img src="https://http2.mlstatic.com/D_NQ_NP_830164-MLM86744524415_062025-O.webp" alt="Velas para abundancia"></figure>
+                <h3>Velas para abundancia</h3>
+                <p>Vela negra y roja para rituales.</p>
+                <p>Precio: $386 MXN</p>
+                <button type="button" class="btn-carrito">Agregar al carrito</button>
+            </article>
+
+            <article>
+                <figure><img src="https://i.etsystatic.com/14154111/r/il/9c01ba/8077757356/il_fullxfull.8077757356_oubf.jpg" alt="Vela de miel"></figure>
+                <h3>Vela De Miel</h3>
+                <p>Vela para rituales de endulzar.</p>
+                <p>Precio: $260 MXN</p>
+                <button type="button" class="btn-carrito">Agregar al carrito</button>
+            </article>
+
+            <article>
+                <figure><img src="https://http2.mlstatic.com/D_NQ_NP_930241-MLA74217547364_012024-O.webp" alt="Velas de colores"></figure>
+                <h3>Set de Velas Intencionadas</h3>
+                <p>Paquete de velas de diferentes intenciones.</p>
+                <p>Precio: $4,600 MXN</p>
+                <button type="button" class="btn-carrito">Agregar al carrito</button>
+            </article>
+        </section>
+
+        <!-- Categoría de inciensos -->
+        <section class="catalogo">
+            <h2>Inciensos</h2>
+
+            <article>
+                <figure><img src="https://envibelife.com/wp-content/uploads/2021/11/Palo-Santo-Smudging-Sticks-3.jpg" alt="Palo santo"></figure>
+                <h3>Palo Santo</h3>
+                <p>Palo santo para limpiar y purificar.</p>
+                <p>Precio: $420 MXN</p>
+                <button type="button" class="btn-carrito">Agregar al carrito</button>
+            </article>
+
+            <article>
+                <figure><img src="https://vibracionconsciente.cl/wp-content/uploads/2025/12/Incienso-Ancestral-Sandalo-%E2%80%93-OMTIRTH-Promo.png" alt="Incienso de sándalo"></figure>
+                <h3>Incienso de Sandalo</h3>
+                <p>Varitas con aroma amaderado.</p>
+                <p>Precio: $130 MXN</p>
+                <button type="button" class="btn-carrito">Agregar al carrito</button>
+            </article>
+
+            <article>
+                <figure><img src="https://tse1.explicit.bing.net/th/id/OIP.0nqFxtiNixDDO4Mq0cnVhQHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Incienso de canela"></figure>
+                <h3>Incienso de Canela</h3>
+                <p>Aroma a canela, ideal para la abundancia.</p>
+                <p>Precio: $84 MXN</p>
+                <button type="button" class="btn-carrito">Agregar al carrito</button>
+            </article>
+
+            <article>
+                <figure><img src="https://m.media-amazon.com/images/I/81Fr4LcZVbL._AC_SX679_.jpg" alt="Paquete de sahumos"></figure>
+                <h3>Paquete de sahumos</h3>
+                <p>7 Varitas naturales.</p>
+                <p>Precio: $689 MXN</p>
+                <button type="button" class="btn-carrito">Agregar al carrito</button>
+            </article>
+        </section>
+
+        <!-- Categoría de porta inciensos -->
+        <section class="catalogo">
+            <h2>Porta Inciensos</h2>
+
+            <article>
+                <figure><img src="https://www.naturalesal.cl/wp-content/uploads/2025/10/Porta-Incienso3-scaled.jpg" alt="Porta incienso de madera"></figure>
+                <h3>Porta Incienso de Madera</h3>
+                <p>Soporte sencillo para varitas.</p>
+                <p>Precio: $80 MXN</p>
+                <button type="button" class="btn-carrito">Agregar al carrito</button>
+            </article>
+
+            <article>
+                <figure><img src="https://i.pinimg.com/736x/fb/1f/ea/fb1fea0f033f6a959c39f591aa140931.jpg" alt="Porta incienso lunar"></figure>
+                <h3>Porta Incienso Lunar</h3>
+                <p>Diseño decorativo de luna.</p>
+                <p>Precio: $185 MXN</p>
+                <button type="button" class="btn-carrito">Agregar al carrito</button>
+            </article>
+
+            <article>
+                <figure><img src="https://tse4.mm.bing.net/th/id/OIP.Ak-R2axOC7dZdBYoMyI5kAHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Porta incienso de cerámica"></figure>
+                <h3>Porta Incienso de Cerámica</h3>
+                <p>Soporte artesanal.</p>
+                <p>Precio: $230 MXN</p>
+                <button type="button" class="btn-carrito">Agregar al carrito</button>
+            </article>
+
+            <article>
+                <figure><img src="https://media.s-bol.com/7y3E5GVENp6A/9pV70Z/550x615.jpg" alt="Porta incienso decorado"></figure>
+                <h3>Porta Incienso Decorado</h3>
+                <p>Diseño con detalles místicos.</p>
+                <p>Precio: $320 MXN</p>
+                <button type="button" class="btn-carrito">Agregar al carrito</button>
+            </article>
+        </section>
+
+        <!-- Categoría de cuarzos -->
+        <section class="catalogo">
+            <h2>Cuarzos</h2>
+
+            <article>
+                <figure><img src="https://m.media-amazon.com/images/I/61TbymW+RYL._AC_SY300_SX300_QL70_ML2_.jpg" alt="Cuarzo rosa"></figure>
+                <h3>Cuarzo Rosa</h3>
+                <p>Piedra natural de color rosa.</p>
+                <p>Precio: $143 MXN</p>
+                <button type="button" class="btn-carrito">Agregar al carrito</button>
+            </article>
+
+            <article>
+                <figure><img src="https://m.media-amazon.com/images/I/71l5cYPQKTL._AC_SX679_.jpg" alt="Amatista"></figure>
+                <h3>Amatista</h3>
+                <p>Cuarzo de tonalidad violeta.</p>
+                <p>Precio: $130 MXN</p>
+                <button type="button" class="btn-carrito">Agregar al carrito</button>
+            </article>
+
+            <article>
+                <figure><img src="https://th.bing.com/th/id/R.3c8e41697a3c2621f2d8f0dd712f0d2d?rik=hvutbgQ1WvqzBg&riu=http%3a%2f%2fantevasinstore.com%2fcdn%2fshop%2fproducts%2fimage_fecd4cf4-257d-40cb-9974-e36b02c3a034.jpg%3fv%3d1657380341&ehk=G9QzgrNraMoKhifqH3lfuSc5tI9c9syT%2fR0SbMgXHtE%3d&risl=&pid=ImgRaw&r=0" alt="Cuarzo ojo de tigre"></figure>
+                <h3>Cuarzo Ojo De Tigre</h3>
+                <p>Propiedades poderosas.</p>
+                <p>Precio: $167 MXN</p>
+                <button type="button" class="btn-carrito">Agregar al carrito</button>
+            </article>
+
+            <article>
+                <figure><img src="https://http2.mlstatic.com/D_NQ_NP_917797-CBT97476889897_112025-O.webp" alt="Obsidiana negra"></figure>
+                <h3>Obsidiana Negra</h3>
+                <p>Piedra oscura de acabado brillante.</p>
+                <p>Precio: $198 MXN</p>
+                <button type="button" class="btn-carrito">Agregar al carrito</button>
+            </article>
+        </section>
+
+    </main>
+
+    <!-- Pie de página y enlace de contacto -->
+    <footer>
+        <p>&copy; 2026 Toña La Médium. Todos los derechos reservados.</p>
+        <a href="contacto.html">Contáctanos</a>
+    </footer>
+
+    <!-- Conexión con JavaScript -->
+    <script src="main.js" defer></script>
+
+</body>
+</html>
