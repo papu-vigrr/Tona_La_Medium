@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi cuenta - Toña La Médium</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Toña La Médium</h1>
+        <p>Tu espacio de magia y espiritualidad</p>
+
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="productos.html">Productos</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="mispedidos.html">Mis pedidos</a>
+            <button type="button" id="cerrarsesion">Cerrar sesión</button>
+        </nav>
+    </header>
+
+    <main class="cuenta-contenedor">
+
+        <section class="cuenta-panel">
+
+            <h2>Mi cuenta</h2>
+            <p>Inicia sesión o crea una cuenta para realizar tus compras.</p>
+
+            <div class="cuenta-opciones">
+                <button type="button" id="mostrar-login">
+                    Iniciar sesión
+                </button>
+
+                <button type="button" id="mostrar-registro">
+                    Crear cuenta
+                </button>
+            </div>
+
+            <!-- FORMULARIO DE INICIO DE SESIÓN -->
+            <form id="formulario-login">
+
+                <h3>Bienvenido de nuevo</h3>
+
+                <label for="correo-login">Correo electrónico:</label>
+                <input type="email" id="correo-login" required>
+
+                <label for="contrasena-login">Contraseña:</label>
+                <input type="password" id="contrasena-login" required>
+
+                <button type="submit">Entrar</button>
+
+            </form>
+
+            <!-- FORMULARIO DE REGISTRO -->
+            <form id="formulario-registro" hidden>
+
+                <h3>Crear una cuenta</h3>
+
+                <label for="nombre-registro">Nombre completo:</label>
+                <input type="text" id="nombre-registro" required>
+
+                <label for="correo-registro">Correo electrónico:</label>
+                <input type="email" id="correo-registro" required>
+
+                <label for="contrasena-registro">Contraseña:</label>
+                <input type="password" id="contrasena-registro"
+                minlength="6" required>
+
+                <label for="confirmar-contrasena">Confirmar contraseña:</label>
+                <input type="password" id="confirmar-contrasena"
+                minlength="6" required>
+
+                <button type="submit">Registrarme</button>
+
+            </form>
+
+            <p id="mensaje-cuenta" role="status" aria-live="polite"></p>
+
+            <a href="productos.html">Regresar a productos</a>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Toña La Médium. Todos los derechos reservados.</p>
+    </footer>
+
+    <script type="module" src="cuenta.js"></script>
+
+</body>
+</html>
